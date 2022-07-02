@@ -1,3 +1,5 @@
+Below is the README by default when project was created with the Brownie React Mix as a template. Will be removed as project progresses.
+
 # Brownie React Mix
 
 This mix comes with everything you need to start using [React](https://reactjs.org/) with a Brownie project.
