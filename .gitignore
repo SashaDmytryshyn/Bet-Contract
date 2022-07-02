@@ -1,0 +1,8 @@
+.idea/
+.env
+__pycache__
+.history
+.hypothesis/
+client/src/artifacts
+reports/
+node_modules

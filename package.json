@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@emotion/babel-plugin": "^11.9.2",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/lab": "^5.0.0-alpha.83",
+    "@mui/material": "^5.8.1",
+    "@mui/styles": "^5.8.0",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.5",
+    "@usedapp/core": "^0.4.2",
+    "react-number-format": "^4.9.3",
+    "react-scripts": "^5.0.1"
+  }
+}

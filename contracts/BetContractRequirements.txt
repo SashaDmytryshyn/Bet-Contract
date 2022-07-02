@@ -1,0 +1,37 @@
+//NOTES FOR WHEN LAUNCHING DEVELOPMENT SERVER:
+make sure to uncomment out multicallAddresses in App.tsx and let Dapp make a new contract 
+in project1 folder: brownie run ./scripts/deploy.py
+in front_end folder: yarn start
+
+
+Users should be able to deposit 'x' approved currency (should include the base chain currency)
+users can bet on whether a number is higher or lower than 1
+winner gets funds
+users can withdraw, contract gets fee
+owner can take fee funds from contract
+
+1:
+
+need to be able to view balance on website
+    test on a testnetwork(kovan/rinkby) 
+    -> create tests for website
+
+2:
+optional: update entire project to use mui v5 instead of v4
+need bet Window
+    placed bets slide
+    new bet slide
+    bets slide (bets on the contract in general)
+
+need bet functions in contract (makebet, concludebet)
+
+placed bets slide:
+    1 table with the row being bet and columns being:
+        bet size, total pool, expected win, bet condition, time left for bet to conclude 
+    need to read all of this info from contract, 
+    and take in token from Bets.tsx(to map the token address we will get from the contract)
+    
+view current bet, total bets per side, expected payout if win.
+-> start with same token bets
+-> start with a single bet functionality
+optional: get different token bets, calculating payouts based on current prices

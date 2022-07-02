@@ -1,0 +1,21 @@
+{
+  "42": {
+    "BetContract": [
+      "0xFac81B444bee3f2079594400418566D838256062"
+    ],
+    "PlatformToken": [
+      "0xA517c4C606aA6B5d34EAcd8615b0AeD8254a2532"
+    ]
+  },
+  "dev": {
+    "BetContract": [
+      "0x2448F7399087e04a270D004C5AA1eb5887CcaA54"
+    ],
+    "MockV3Aggregator": [
+      "0x15a20A3dF246C00893858Aa73BFabeC290a3f7FC"
+    ],
+    "PlatformToken": [
+      "0x53256171c1E020387E0bF90555B07610D08BA67F"
+    ]
+  }
+}
