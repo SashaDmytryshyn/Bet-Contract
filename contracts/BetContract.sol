@@ -19,7 +19,7 @@ contract BetContract is Ownable {
     //the recieve function takes care of users depositing the core chain token
     function depositTokens(uint256 _amount, address _token) public {
         require(_amount > 0, "Amount must be more than 0");
-        require(tokenIsAllowed(_token), "Token is currently no allowed");
+        require(tokenIsAllowed(_token), "Token is currently not allowed");
         //problem here is we have to pay gas for this transaction...will have to change it so user does this transaction.
         IERC20(_token).transferFrom(msg.sender, address(this), _amount);
         updateUniqueTokensDeposited(msg.sender, _token);
@@ -29,6 +29,27 @@ contract BetContract is Ownable {
         if (uniqueTokensDeposited[msg.sender] == 1) {
             altUsers.push(msg.sender);
         }
+    }
+
+    //withdraw function for users to remove tokens from the platform
+    function withdrawTokensAlt(uint256 _amount, address _token) public {
+        require(_amount > 0, "Amount must be more than 0");
+        require(tokenIsAllowed(_token), "Token is currently not allowed");
+        //check if user has enough amount of token deposited
+        require(userAltBalances[_token][msg.sender] >= _amount);
+        //remove the amount the user has from the platform, then send it to them
+        userAltBalances[_token][msg.sender] -= _amount;
+        IERC20(_token).transfer(msg.sender, _amount);
+    }
+
+    //withdraw function for the platform token
+    function withdrawTokensCore(uint256 _amount) public payable {
+        require(_amount > 0, "Amount must be more than 0");
+        //ensure user has enough funds
+        require(userCoreBalances[msg.sender] >= _amount);
+        //remove funds from platform and send to user
+        userCoreBalances[msg.sender] -= _amount;
+        payable(msg.sender).transfer(_amount);
     }
 
     function updateUniqueTokensDeposited(address _user, address _token)
@@ -169,7 +190,7 @@ contract BetContract is Ownable {
         uint256 amount,
         address tokenAddress
     ) public {
-        bet = bets[betID];
+        //BetStruct bet = bets[betID];
         //check if user has enough for amount of token
         //if so, update the bet to include them AFTER subtracting from their balance
     }

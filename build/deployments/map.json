@@ -9,13 +9,13 @@
   },
   "dev": {
     "BetContract": [
-      "0x2448F7399087e04a270D004C5AA1eb5887CcaA54"
+      "0x42409845568AA8436B037Ab9aDACA1Dd6723F2bA"
     ],
     "MockV3Aggregator": [
-      "0x15a20A3dF246C00893858Aa73BFabeC290a3f7FC"
+      "0x9A1ed210f2E189678bCb64dDeC4CC146C5eE6E37"
     ],
     "PlatformToken": [
-      "0x53256171c1E020387E0bF90555B07610D08BA67F"
+      "0xF5bE99e46040bca1CedDc5Bc37E6cf75aa235569"
     ]
   }
 }
